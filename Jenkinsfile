@@ -24,11 +24,12 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 echo 'Running SonarQube analysis...'
-                withSonarQubeEnv('SonarQube') { // Replace 'SonarQube' with your configured instance name
+                withSonarQubeEnv('SonarQube-Token-1') { // Replace 'SonarQube' with your configured instance name
                     sh 'mvn sonar:sonar \
-                        -Dsonar.projectKey=automation \
-                        -Dsonar.host.url=http://<sonarqube-server-url> \
-                        -Dsonar.login=<sonarqube-auth-token>'
+                        -Dsonar.projectKey=AssignmentMaven \
+                        -Dsonar.host.url=http://localhost:9000 \
+                        -Dsonar.login='sqp_12db9ae249f663e21da13976b9968ab932127406'
+
                 }
             }
         }
