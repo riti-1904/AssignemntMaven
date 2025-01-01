@@ -25,11 +25,10 @@ pipeline {
             steps {
                 echo 'Running SonarQube analysis...'
                 withSonarQubeEnv('SonarQube-Token-1') { // Replace 'SonarQube' with your configured instance name
-                    sh 'mvn sonar:sonar \
+                    sh '''mvn sonar:sonar \
                         -Dsonar.projectKey=AssignmentMaven \
                         -Dsonar.host.url=http://localhost:9000 \
-                        -Dsonar.login=sqp_12db9ae249f663e21da13976b9968ab932127406
-
+                        -Dsonar.login=sqp_12db9ae249f663e21da13976b9968ab932127406'''
                 }
             }
         }
