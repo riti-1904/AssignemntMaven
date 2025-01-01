@@ -1,0 +1,12 @@
+# Maven target folder
+target/
+
+# IDE-specific files
+.idea/
+*.iml
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
